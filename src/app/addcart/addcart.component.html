@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#!">Start Bootstrap</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">All Products</a></li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                        <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <button class="btn btn-outline-dark" type="submit">
+                    <i class="bi-cart-fill me-1"></i>
+                    Cart
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="container mt-5">
+    <div class="card">
+        <div class="row">
+            <div class="col-md cart">
+                <div class="title">
+                    <div class="row">
+                        <div class="col">
+                            <h4><b>Product</b></h4>
+                        </div>
+                        <div class="col align-self-center text-right text-muted">Items</div>
+                        <div class="col align-self-center text-right text-muted"></div>
+                        <div class="col align-self-center text-right text-muted">Price</div>
+                    </div>
+                </div>
+                <div class="row border-top border-bottom " *ngFor="let product of Product_of_data">
+                    <div class="row main align-items-center">
+                        <div class="col-2"><img height="100" src={{backEndurl}}{{product.products[0].img}}></div>
+                        <div class="col">
+                            <div class="row text-muted">Mobile</div>
+                            <div class="row text-muted">{{product.products[0].name}}</div>
+                        </div>
+                        <div class="col">
+                            <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
+                        </div>
+                        <div class="col">₹ {{product.products[0].price}} <span class="close"><a (click)="productDelete(product._id)">&#10005;</a></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div>
+    <nav class="navbar navbar-light bg-light ">
+        <a class="navbar-brand">Navbar</a>
+        <form class="form-inline d-flex">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchData"
+                [(ngModel)]="searchItem">
+
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="search()">Search</button>
+        </form>
+    </nav>
+    <button (click)="addProduct()" class="button btn btn-primary mt-2 ">Add Product</button>
+    <div>
+        <div class="container mt-5 ">
+            <table class="table table-bordered table-light ">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Img</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let users of Product_Of_data">
+                        <td>{{users.name}}</td>
+                        <td><img height="100" src={{backEndurl+users.img}} /></td>
+                        <td>{{users.price}}</td>
+                        <td>{{users.date}}</td>
+                        <td><button (click)="update(users._id)" class="btn btn-success">Edit</button>|<button
+                                (click)="Delete(users._id)" class="btn btn-danger">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>

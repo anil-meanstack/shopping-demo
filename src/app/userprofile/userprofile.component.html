@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="text-center">
+        <img class="mt-5" src="./assets/download.png">
+    </div>
+    <div class="text-center mt-3">
+        <h3>Update Profile</h3>
+    </div>
+    <diV class="custom-centered">
+        <form [formGroup]="user" (ngSubmit)="update()">
+            <div class="form-group">
+                <label class="mt-3">Name</label>
+                <input type="text" class="form-control mt-3" formControlName="name" placeholder="Enter Name">
+                <!-- <div *ngIf="input['name'].touched && input['name'].invalid">
+                    <div class="text-danger" *ngIf="input['name']?.errors?.['required']">Name is required</div>
+                </div> -->
+                </div>
+                <div class="form-group">
+                    <label class="mt-3">Img</label>
+                     <input type="file" class="form-control mt-3" (change)="onChange($event)"
+                     accept="image/png, image/jpeg,image/jfif"> 
+                </div>
+                <div class="form-group">
+                    <label class="mt-3">Phone</label>
+                    <input type="img" class="form-control mt-3" formControlName="phone" placeholder="Enter phone Number">
+                    <!-- <div *ngIf="input['price'].touched && input['price'].invalid">
+                    <div class="text-danger" *ngIf="input['price']?.errors?.['required']">Enter Price</div>
+                </div> -->
+                </div>
+                <div class="form-group">
+                    <label class="mt-3">Address</label>
+                    <input type="text" class="form-control mt-3" formControlName="address" placeholder="Enter Address">
+                    <!-- <div *ngIf="input['date'].touched && input['date'].invalid">
+                    <div class="text-danger" *ngIf="input['date']?.errors?.['required']">Enter Date</div>
+                </div> -->
+                </div>
+                <div class="form-group">
+                    <label class="mt-3">Gender</label>
+                    <input type="text" class="form-control mt-3" formControlName="gender" placeholder="Enter Gender">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg mt-3">Update</button>
+        </form>
+
+    </diV>
+</div>
